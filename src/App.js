@@ -1,44 +1,25 @@
-import React, { Component } from 'react';
-import User from './User'
-import Form1 from './form'
-import Header from './header'
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
+import './App.css';
+import UserForm from './components/UserForm';
+import UserTable from './components/UserTable';
+import Header from './Header';
 
-
-class App extends Component {
-    state = {
-        characters: []
-    };
-
-    removeCharacter = index => {
-        const { characters } = this.state;
-    
-        this.setState({
-            characters: characters.filter((character, i) => { 
-                return i !== index;
-            })
-        });
-    }
-
-    handleSubmit = character => {
-        this.setState({characters: [...this.state.characters, character]});
-    }
-
-    render() {
-        const { characters } = this.state;
-        
-        return (
-            <div className="container">
-                <Header />
-                <User
-                    characterData={characters}
-                    removeCharacter={this.removeCharacter}
-                />
-                <h3>Add New</h3>
-                <Form1 handleSubmit={this.handleSubmit}
-                 />
-            </div>
-        );
-    }
+const head = {
+    marginLeft:'30%'
+  }
+function App() {
+  return (
+    <Provider store={store}>
+    <div className="App">
+<Header />
+     <UserTable />
+     <h3 style = {head}> Add New User </h3>
+      <UserForm />
+    </div>
+    </Provider>
+  );
 }
 
 export default App;
