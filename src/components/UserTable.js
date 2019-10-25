@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Table } from 'react-bootstrap';
 import moment from 'moment';
-
+//
 export default () => {
     const details = useSelector((state) => state.users.details);
 
@@ -11,7 +11,7 @@ export default () => {
             <Table bordered striped hover responsive variant="dark">
                     <thead>
                         <tr>
-                            <th>First Name</th>
+                            <th>first Name</th>
                             <th>Last Name</th>
                             <th>Hobby</th>
                             <th>Date of Birth</th>
