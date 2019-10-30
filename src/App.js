@@ -4,7 +4,7 @@ import store from './store';
 import './App.css';
 import UserForm from './components/UserForm';
 import UserTable from './components/UserTable';
-import Header from './header';
+import Header from './Header';
 
 const head = {
     marginLeft:'30%'
